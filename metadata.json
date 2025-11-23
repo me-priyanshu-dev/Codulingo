@@ -1,0 +1,5 @@
+{
+  "name": "Codulingo",
+  "description": "A gamified, Duolingo-style platform for learning HTML and coding concepts, powered by Gemini to provide personalized tutoring and explanations.",
+  "requestFramePermissions": []
+}

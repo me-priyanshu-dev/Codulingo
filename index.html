@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Codulingo - Learn to Code</title>
+    <meta name="description" content="A gamified coding platform designed for everyone. Learn HTML with interactive lessons, fun characters, and rewards." />
+    <meta name="theme-color" content="#58cc02" />
+    
+    <!-- Open Graph / SEO -->
+    <meta property="og:title" content="Codulingo" />
+    <meta property="og:description" content="Learn to code for free with the world's most fun coding app." />
+    <meta property="og:type" content="website" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              duo: {
+                bg: 'var(--bg)',
+                card: 'var(--card)',
+                green: 'var(--green)',
+                'green-dark': 'var(--green-dark)',
+                blue: 'var(--blue)',
+                'blue-accent': 'var(--blue-accent)',
+                'blue-dark': 'var(--blue-dark)',
+                red: 'var(--red)',
+                'red-dark': 'var(--red-dark)',
+                yellow: 'var(--yellow)',
+                'yellow-dark': 'var(--yellow-dark)',
+                gray: 'var(--gray)',
+                'gray-light': 'var(--gray-light)',
+                text: 'var(--text)',
+                'text-sub': 'var(--text-sub)'
+              }
+            },
+            fontFamily: {
+              sans: ['Nunito', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+              fredoka: ['Fredoka', 'sans-serif'],
+            },
+            animation: {
+              'bounce-slow': 'bounce 3s infinite',
+              'shake': 'shake 0.5s cubic-bezier(.36,.07,.19,.97) both',
+              'pop-in': 'pop-in 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
+              'float': 'float 3s ease-in-out infinite',
+              'confetti': 'confetti 1s ease-out forwards',
+            },
+            keyframes: {
+              'shake': {
+                '10%, 90%': { transform: 'translate3d(-1px, 0, 0)' },
+                '20%, 80%': { transform: 'translate3d(2px, 0, 0)' },
+                '30%, 50%, 70%': { transform: 'translate3d(-4px, 0, 0)' },
+                '40%, 60%': { transform: 'translate3d(4px, 0, 0)' }
+              },
+              'pop-in': {
+                '0%': { opacity: '0', transform: 'scale(0.5)' },
+                '100%': { opacity: '1', transform: 'scale(1)' }
+              },
+              'float': {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      :root {
+        /* LIGHT MODE (Default) - Clean, High Contrast */
+        --bg: #ffffff;
+        --card: #ffffff;
+        --text: #3c3c3c;        /* Dark Charcoal */
+        --text-sub: #777777;    /* Medium Gray */
+
+        --green: #58cc02;      
+        --green-dark: #46a302;
+        
+        --blue: #1cb0f6;       
+        --blue-accent: #1cb0f6;
+        --blue-dark: #1899d6;
+        
+        --red: #ff4b4b;        
+        --red-dark: #d42c2c;
+        
+        --yellow: #ffc800;     
+        --yellow-dark: #e5b400;
+        
+        --gray: #e5e5e5;       /* Light Borders */
+        --gray-light: #f7f7f7; /* Very light background for lists/items */
+      }
+
+      /* DARK MODE - Deep, Easy on Eyes */
+      body.dark-mode {
+        --bg: #131f24;         /* Very Dark Blue-Grey */
+        --card: #202f36;       /* Slightly lighter for cards */
+        --text: #e5e7eb;       /* Off-white */
+        --text-sub: #9ca3af;   /* Gray */
+        
+        --green: #2bda6e;
+        --green-dark: #21aa55;
+        
+        --blue: #1cb0f6;
+        --blue-accent: #1cb0f6;
+        --blue-dark: #1899d6;
+        
+        --red: #ff5f5f;
+        --red-dark: #d64545;
+        
+        --yellow: #ffd900;
+        --yellow-dark: #d6b600;
+        
+        --gray: #37464f;       /* Dark Borders */
+        --gray-light: #283840; /* Darker accent */
+      }
+      
+      body {
+        background-color: var(--bg);
+        color: var(--text);
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--gray);
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--text-sub);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
