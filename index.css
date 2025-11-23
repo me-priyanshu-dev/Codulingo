@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Variables extracted from index.html */
+:root {
+  /* LIGHT MODE (Default) - Clean, High Contrast */
+  --bg: #ffffff;
+  --card: #ffffff;
+  --text: #3c3c3c;        /* Dark Charcoal */
+  --text-sub: #777777;    /* Medium Gray */
+
+  --green: #58cc02;      
+  --green-dark: #46a302;
+  
+  --blue: #1cb0f6;       
+  --blue-accent: #1cb0f6;
+  --blue-dark: #1899d6;
+  
+  --red: #ff4b4b;        
+  --red-dark: #d42c2c;
+  
+  --yellow: #ffc800;     
+  --yellow-dark: #e5b400;
+  
+  --gray: #e5e5e5;       /* Light Borders */
+  --gray-light: #f7f7f7; /* Very light background for lists/items */
+}
+
+/* DARK MODE - Deep, Easy on Eyes */
+body.dark-mode {
+  --bg: #131f24;         /* Very Dark Blue-Grey */
+  --card: #202f36;       /* Slightly lighter for cards */
+  --text: #e5e7eb;       /* Off-white */
+  --text-sub: #9ca3af;   /* Gray */
+  
+  --green: #2bda6e;
+  --green-dark: #21aa55;
+  
+  --blue: #1cb0f6;
+  --blue-accent: #1cb0f6;
+  --blue-dark: #1899d6;
+  
+  --red: #ff5f5f;
+  --red-dark: #d64545;
+  
+  --yellow: #ffd900;
+  --yellow-dark: #d6b600;
+  
+  --gray: #37464f;       /* Dark Borders */
+  --gray-light: #283840; /* Darker accent */
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gray);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-sub);
+}
